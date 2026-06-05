@@ -217,6 +217,27 @@
         submitBtn.disabled = true;
         submitBtn.innerText = "جاري معالجة البيانات وإرسالها...";
     });
+
+    // ⏬ كود التعطيل وإظهار رسالة انتهاء المدة الرسمية دون المساس بالهيكل الأساسي ⏬
+    document.addEventListener("DOMContentLoaded", function() {
+        // نقوم بمسح محتوى الحاوية الداخلية للاستمارة واستبدالها برسالة الاعتذار
+        const formContainer = document.querySelector('.form-container');
+        if (formContainer) {
+            formContainer.innerHTML = `
+                <div class="header-section" style="padding: 60px 30px;">
+                    <h1 style="color: #c62828; font-size: 2rem; margin-bottom: 20px;">تنبيه: إغلاق استقبال الطلبات</h1>
+                    <p style="font-size: 1.2rem; color: #444; font-weight: bold; line-height: 1.8;">
+                        عذراً، تم إيقاف استقبال رغبات التوجيه لطلبة السنة الثالثة كيمياء أساسية بصفة رسمية نظراً لانتهاء المدة المحددة مسبقاً.
+                    </p>
+                    <p style="color: #777; margin-top: 20px;">يمكنكم متابعة المستجدات ونتائج الطعون والنتائج النهائية حسب المواعيد المعلنة.</p>
+                </div>
+                <div class="footer">
+                    البريد الإلكتروني للقسم: <strong>pg.dep.chemie@gmail.com</strong><br>
+                    كلية الرياضيات وعلوم المادة - قسم الكيمياء - جامعة قاصدي مرباح ورقلة
+                </div>
+            `;
+        }
+    });
 </script>
 
 </body>
